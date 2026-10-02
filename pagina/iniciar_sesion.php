@@ -1,49 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../info/css/bootstrap.min.css">
     <link rel="stylesheet" href="../info/css/all.min.css">
     <link rel="stylesheet" href="../info/estilos.css">
-    <title>Inicio de sesión</title>
+
+    <title>Iniciar sesión | Quesos Ocosingo</title>
 </head>
 
-<body>
-    <section>
-        <div class="container mt-5 pt-5">
-            <div class="login-form">
-                <div class="col-12 col-sm-8 col-md-6 m-auto">
-                    <div class="card border-0 shadown">
-                        <div class="card-body text-center">
-                            <svg class=" my-3 " xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                            </svg>
-                            <form action="validar.php" method="post">
-                                <h2 class="text-center">BIENVENIDO</h2>
+<body class="login-page">
 
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Nombre de usuario</label>
-                                    <input type="text" class="form-control" id="username" name="username" required autocomplete="off">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" name="password" required autocomplete="off">
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
-                            </form>
+    <div class="login-wrapper">
+
+        <!-- LADO IZQUIERDO -->
+        <div class="login-banner">
+
+            <div class="login-overlay"></div>
+
+            <div class="login-banner-content">
+
+                <a href="../index.php" class="login-brand">
+                    <span>Quesos</span> Ocosingo
+                </a>
+
+                <div class="login-banner-text">
+
+                    <span class="login-subtitle">
+                        Tradición chiapaneca
+                    </span>
+
+                    <h1>
+                        El sabor de Ocosingo en un solo lugar
+                    </h1>
+
+                    <p>
+                        Accede al sistema para consultar nuestros productos
+                        y administrar la información disponible.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LADO DERECHO -->
+        <div class="login-panel">
+
+            <div class="login-card">
+
+                <div class="login-header">
+
+                    <div class="login-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <h2>
+                        Bienvenido
+                    </h2>
+
+                    <p>
+                        Ingresa tus datos para continuar
+                    </p>
+
+                </div>
+
+
+                <form action="validar.php" method="post">
+
+                    <div class="mb-4">
+
+                        <label for="username" class="form-label login-label">
+                            Nombre de usuario
+                        </label>
+
+                        <div class="login-input-group">
+
+                            <span class="login-input-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+
+                            <input
+                                type="text"
+                                class="form-control login-input"
+                                id="username"
+                                name="username"
+                                placeholder="Ingresa tu usuario"
+                                required
+                                autocomplete="username">
 
                         </div>
+
                     </div>
-                </div>
+
+
+                    <div class="mb-3">
+
+                        <label for="password" class="form-label login-label">
+                            Contraseña
+                        </label>
+
+                        <div class="login-input-group">
+
+                            <span class="login-input-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+
+                            <input
+                                type="password"
+                                class="form-control login-input"
+                                id="password"
+                                name="password"
+                                placeholder="Ingresa tu contraseña"
+                                required
+                                autocomplete="current-password">
+
+                            <button
+                                type="button"
+                                class="btn-show-password"
+                                id="btnPassword"
+                                aria-label="Mostrar contraseña">
+
+                                <i
+                                    class="fa-solid fa-eye"
+                                    id="passwordIcon">
+                                </i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-login w-100">
+
+                        Iniciar sesión
+                    </button>
+
+
+                    <div class="login-back">
+
+                        <a href="../index.php">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Volver a la página principal
+                        </a>
+
+                    </div>
+
+                </form>
+
             </div>
+
         </div>
-    </section>
-    <script src="../jquery-3.7.1.min.js"></script>
+
+    </div>
+
+
     <script src="../info/js/bootstrap.bundle.min.js"></script>
+
     <script>
+        const btnPassword = document.getElementById('btnPassword');
+        const password = document.getElementById('password');
+        const passwordIcon = document.getElementById('passwordIcon');
+
+        btnPassword.addEventListener('click', function () {
+
+            if (password.type === 'password') {
+                password.type = 'text';
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            } else {
+                password.type = 'password';
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            }
+
+        });
     </script>
+
 </body>
+
 </html>
