@@ -46,7 +46,7 @@ $nuevoProve = $conn->query($sqlProve);
           
           <div class="mb-3">
             <label for="tipo_producto" class="form-label"> tipo producto </label>
-            <select name="producto" id="tipo_producto" class="form-select" required>
+            <select name="id_tipo_producto" id="tipo_producto" class="form-select" required>
               <option value="">Seleccionar..</option>
               <?php while ($row_tipo = $nuevoProducto->fetch_assoc()) { ?>
                 <option value="<?php echo $row_tipo["id_tipo_producto"]; ?>"><?= $row_tipo["nombre_tipo_producto"] ?></option>
