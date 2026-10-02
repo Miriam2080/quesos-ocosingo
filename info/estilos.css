@@ -491,3 +491,409 @@ section {
         height: 500px;
     }
 }
+
+/* =========================
+   INICIO DE SESIÓN
+========================= */
+
+.login-page {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #f8f3e8;
+}
+
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================
+   LADO IZQUIERDO
+========================= */
+
+.login-banner {
+    width: 55%;
+    min-height: 100vh;
+
+    background-image:
+        url("../img/cheese-5125021_1280.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.login-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37, 23, 16, 0.92),
+            rgba(75, 46, 32, 0.65)
+        );
+}
+
+.login-banner-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 50px 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-brand {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.login-brand span {
+    color: #d6a72c;
+}
+
+.login-brand:hover {
+    color: #ffffff;
+}
+
+.login-banner-text {
+    max-width: 600px;
+    margin-bottom: 90px;
+}
+
+.login-subtitle {
+    display: inline-block;
+
+    color: #d6a72c;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.login-banner-text h1 {
+    color: #ffffff;
+
+    font-size: 3.2rem;
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.login-banner-text p {
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   PANEL DERECHO
+========================= */
+
+.login-panel {
+    width: 45%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background-color: #f8f3e8;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* =========================
+   ENCABEZADO LOGIN
+========================= */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.login-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background-color: #4b2e20;
+    color: #d6a72c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.9rem;
+
+    box-shadow:
+        0 10px 25px rgba(75, 46, 32, 0.2);
+}
+
+.login-header h2 {
+    color: #4b2e20;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: #7a6e66;
+    margin: 0;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.login-label {
+    color: #4b2e20;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.login-input-group {
+    position: relative;
+}
+
+.login-input-icon {
+    position: absolute;
+
+    top: 50%;
+    left: 16px;
+
+    transform: translateY(-50%);
+
+    color: #a29183;
+
+    z-index: 4;
+}
+
+.login-input {
+    min-height: 52px;
+
+    padding-left: 48px;
+    padding-right: 48px;
+
+    border: 1px solid #ddd1c5;
+
+    border-radius: 10px;
+
+    background-color: #ffffff;
+
+    box-shadow: none;
+}
+
+.login-input:focus {
+    border-color: #d6a72c;
+
+    box-shadow:
+        0 0 0 0.2rem rgba(214, 167, 44, 0.15);
+}
+
+
+/* =========================
+   BOTÓN MOSTRAR CONTRASEÑA
+========================= */
+
+.btn-show-password {
+    position: absolute;
+
+    top: 50%;
+    right: 15px;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: #8a7b70;
+
+    cursor: pointer;
+
+    z-index: 4;
+}
+
+
+/* =========================
+   BOTÓN LOGIN
+========================= */
+
+.btn-login {
+    margin-top: 25px;
+
+    min-height: 52px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background-color: #d6a72c;
+
+    color: #2f1c13;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #b38619;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(179, 134, 25, 0.25);
+}
+
+
+/* =========================
+   VOLVER
+========================= */
+
+.login-back {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-back a {
+    color: #6d5c51;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+}
+
+.login-back a:hover {
+    color: #b38619;
+}
+
+.login-back i {
+    margin-right: 5px;
+}
+
+
+/* =========================
+   RESPONSIVE LOGIN
+========================= */
+
+@media (max-width: 991px) {
+
+    .login-banner {
+        width: 48%;
+    }
+
+    .login-panel {
+        width: 52%;
+    }
+
+    .login-banner-content {
+        padding: 40px;
+    }
+
+    .login-banner-text h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .login-wrapper {
+        display: block;
+    }
+
+    .login-banner {
+        width: 100%;
+        min-height: 280px;
+    }
+
+    .login-banner-content {
+        min-height: 280px;
+
+        padding: 30px;
+
+        justify-content: space-between;
+    }
+
+    .login-banner-text {
+        margin-bottom: 0;
+    }
+
+    .login-banner-text h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .login-banner-text p {
+        font-size: 0.95rem;
+    }
+
+    .login-panel {
+        width: 100%;
+        min-height: auto;
+
+        padding: 50px 25px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .login-brand {
+        font-size: 1.45rem;
+    }
+
+    .login-banner-text h1 {
+        font-size: 1.7rem;
+    }
+
+    .login-banner-text p {
+        display: none;
+    }
+
+    .login-panel {
+        padding: 40px 20px;
+    }
+
+}
