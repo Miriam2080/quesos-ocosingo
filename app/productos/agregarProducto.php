@@ -21,12 +21,13 @@ $nuevoProve = $conn->query($sqlProve);
 
           <div class="mb-3">
             <label for="fechacadu" class="form-label">Fecha de caducidad:</label>
-            <input type="date" name="fecha_cadu" id="fecha_cadu" class="form-control" required min=<?php $hoy=date("Y-m-d"); echo $hoy;?>>
+            <input type="date" name="fecha_cadu" id="fecha_cadu" class="form-control" required min=<?php $hoy = date("Y-m-d");
+                                                                                                    echo $hoy; ?>>
           </div>
 
           <div class="mb-3">
             <label for="descripcion" class="form-label">Descripcion:</label>
-            <input type="text" name="descripcion" id="descripcion" class="form-control"  required pattern="^[a-zA-Z0-9,.!? ]{5,200}$">
+            <input type="text" name="descripcion" id="descripcion" class="form-control" required pattern="^[a-zA-Z0-9,.!? ]{5,200}$">
           </div>
 
           <div class="mb-3">
@@ -36,7 +37,14 @@ $nuevoProve = $conn->query($sqlProve);
 
           <div class="mb-3">
             <label for="caracteristica" class="form-label">Caracteristica: </label>
-            <input type="text" name="caracteristica" id="caracteristica" class="form-control"  required pattern="[A-Za-zÁ-ÿ]+([ ]?[A-Za-zÁ-ÿ]+)">
+            <input
+              type="text"
+              name="descripcion"
+              id="descripcion"
+              class="form-control"
+              required
+              pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9,.!? ]{5,200}$"
+              title="Ingrese una descripción válida de entre 5 y 200 caracteres">
           </div>
 
           <div class="mb-3">
@@ -68,7 +76,7 @@ $nuevoProve = $conn->query($sqlProve);
               <?php } ?>
             </select>
           </div>
-          
+
           <div class="">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>Guardar cambios </button>

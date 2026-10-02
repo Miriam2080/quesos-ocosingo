@@ -88,7 +88,12 @@ if ($varsesion == null || $varsesion = '') {
                                     <td>
                                         <div class="btn-group">
                                             <a class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editaProducto" data-bs-id="<?= $informacion['id_producto']; ?>"><i class="fa-solid fa-pencil"></i></a>
-                                            <a class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#eliminaModal" data-bs-id="<?= $informacion['id_producto']; ?>"><i class="fa-solid fa-trash"></i></a>
+                                           <a class="btn btn-sm btn-danger"
+   data-bs-toggle="modal"
+   data-bs-target="#eliminaProducto"
+   data-bs-id="<?= $informacion['id_producto']; ?>">
+    <i class="fa-solid fa-trash"></i>
+</a>
                                         </div>
 
                                     </td>
@@ -124,7 +129,7 @@ if ($varsesion == null || $varsesion = '') {
     <script>
         //LLama al los botones
         let editarModal = document.querySelector('#editaProducto');
-        let eliminarModal = document.querySelector('#eliminaModal');
+        let eliminarModal = document.querySelector('#eliminaProducto');
 
         //Editar
         editarModal.addEventListener('shown.bs.modal', event => {
