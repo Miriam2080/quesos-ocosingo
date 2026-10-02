@@ -1,0 +1,39 @@
+:root{
+    --primario:rgb(233, 206, 51);
+    --secundario:rgba(201, 193, 80, 0.945);
+    --terceario:rgb(43, 50, 143);
+}
+body{
+    background-color: var(--secundario);
+}
+
+#ocosingo{
+    font-weight:700;
+    color: rgba(109, 44, 44, 0.918);
+}
+
+.nota{
+    background-color: var(--primario);
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+i{
+    cursor: pointer;
+}
+#ocosingo{
+    cursor: pointer;
+}
+
+/**Servicios*/
+.custom-img-size {
+    max-width: 120rem; /* Ajusta el tamaño máximo de la imagen */
+    height: 70rem;    /* Mantiene la proporción de la imagen */
+  }
+/**Navegación principal**/
+.nav-pills li a:hover{
+    background-color: aqua;
+}
