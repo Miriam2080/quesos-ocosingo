@@ -20,31 +20,30 @@ $nuevoProve = $conn->query($sqlProve);
         <form action="guardarProducto.php" method="post" enctype="multipart/form-data">
 
           <div class="mb-3">
-            <label for="fechacadu" class="form-label">Fecha de caducidad:</label>
-            <input type="date" name="fecha_cadu" id="fecha_cadu" class="form-control" required min=<?php $hoy = date("Y-m-d");
-                                                                                                    echo $hoy; ?>>
+            <label for="fecha_cadu" class="form-label">Fecha de caducidad:</label>
+            <input type="date" name="fecha_cadu" id="fecha_cadu" class="form-control" required min="<?= date('Y-m-d') ?>">
           </div>
 
           <div class="mb-3">
             <label for="descripcion" class="form-label">Descripcion:</label>
-            <input type="text" name="descripcion" id="descripcion" class="form-control" required pattern="^[a-zA-Z0-9,.!? ]{5,200}$">
+            <input type="text" name="descripcion" id="descripcion" class="form-control" required minlength="5" maxlength="200">
           </div>
 
           <div class="mb-3">
             <label for="cantidad" class="form-label">Cantidad: </label>
-            <input type="number" name="cantidad" id="cantidad" class="form-control" min="1" required>
+            <input type="number" name="cantidad" id="cantidad" class="form-control" min="1" step="1" required>
           </div>
 
           <div class="mb-3">
             <label for="caracteristica" class="form-label">Caracteristica: </label>
             <input
               type="text"
-              name="descripcion"
-              id="descripcion"
+              name="caracteristica"
+              id="caracteristica"
               class="form-control"
               required
-              pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9,.!? ]{5,200}$"
-              title="Ingrese una descripción válida de entre 5 y 200 caracteres">
+              minlength="5" maxlength="200"
+              title="Ingrese una característica de entre 5 y 200 caracteres">
           </div>
 
           <div class="mb-3">
