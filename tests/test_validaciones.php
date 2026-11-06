@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../src/validaciones.php';
 $valido = ['descripcion'=>'Queso bola artesanal', 'caracteristica'=>'Queso fresco artesanal', 'cantidad'=>10, 'fecha_cadu'=>'2026-12-20', 'id_tipo_producto'=>1,'id_marca'=>2,'id_proveedor'=>3];
 $casos = [
- ['Producto válido',$valido,true],
+ ['Producto válido',$valido,false],// Fallo intencional
  ['Característica vacía',array_replace($valido,['caracteristica'=>'']),false],
  ['Descripción corta',array_replace($valido,['descripcion'=>'abc']),false],
  ['Característica corta',array_replace($valido,['caracteristica'=>'abc']),false],
