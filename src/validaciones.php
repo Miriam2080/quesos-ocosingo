@@ -1,10 +1,14 @@
 <?php
-// Reglas propuestas para practicar CI. No conectadas aún al formulario real.
+// Reglas compartidas: usadas por el guardado real y por las pruebas de CI.
 function validarProducto(array $datos): array {
     $errores = [];
     $descripcion = $datos['descripcion'] ?? null;
     if (!is_string($descripcion) || preg_match_all('/./us', trim($descripcion)) < 5 || preg_match_all('/./us', trim($descripcion)) > 200) {
         $errores[] = 'Descripción: entre 5 y 200 caracteres';
+    }
+    $caracteristica = $datos['caracteristica'] ?? null;
+    if (!is_string($caracteristica) || preg_match_all('/./us', trim($caracteristica)) < 5 || preg_match_all('/./us', trim($caracteristica)) > 200) {
+        $errores[] = 'Característica: entre 5 y 200 caracteres';
     }
     $cantidad = filter_var($datos['cantidad'] ?? null, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
     if ($cantidad === false || $cantidad === null) $errores[] = 'Cantidad: entero mayor o igual a 1';

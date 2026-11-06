@@ -1,8 +1,7 @@
 <?php
 session_start();
-error_reporting(0);
-$varsesion = $_SESSION['username'];
-if ($varsesion == null || $varsesion = '') {
+// Control de acceso a la página de productos.
+if (empty($_SESSION['username'])) {
 	header('Location: ../../pagina/iniciar_sesion.php');
 	die();
 }
@@ -37,6 +36,12 @@ if ($varsesion == null || $varsesion = '') {
         <div class="container py-3">
             <div class="row">
                 <h1 class="text-center">Productos</h1>
+                <?php if (!empty($_SESSION['producto_mensaje'])): ?>
+                    <div class="alert alert-<?= ($_SESSION['producto_tipo'] ?? '') === 'success' ? 'success' : 'danger' ?>" role="alert">
+                        <?= htmlspecialchars($_SESSION['producto_mensaje'], ENT_QUOTES, 'UTF-8') ?>
+                    </div>
+                    <?php unset($_SESSION['producto_mensaje'], $_SESSION['producto_tipo']); ?>
+                <?php endif; ?>
                 <form class="row g-3 mb-6 d-flex justify-content-center">
                     <div class="col-auto col-lg-4 ">
                         <label for="searchproductoInput" class="visually-hidden ">Buscar</label>

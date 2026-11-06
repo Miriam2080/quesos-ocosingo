@@ -41,6 +41,11 @@ jobs:
       - name: Revisar sintaxis
         run: |
           php -l src/validaciones.php
+          php -l src/registro_productos.php
+          php -l app/productos/agregarProducto.php
+          php -l app/productos/guardarProducto.php
+          php -l app/productos/productos.php
+          php -l tests/test_flujo_formulario.php
           php -l tests/test_validaciones.php
           php -l tests/conexion_pruebas.php
           php -l tests/test_integracion_productos.php
@@ -51,5 +56,7 @@ jobs:
           mysql --protocol=TCP --host="$DB_HOST" --user="$DB_USER" "$DB_NAME" < tests/estructura_pruebas.sql
       - name: Ejecutar pruebas de validación funcional
         run: php tests/test_validaciones.php
+      - name: Verificar conexión del formulario con validaciones
+        run: php tests/test_flujo_formulario.php
       - name: Ejecutar prueba de integración MySQL
         run: php tests/test_integracion_productos.php
